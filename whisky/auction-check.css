@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222a25;
+  background: #fcfcfa;
+  --green: #285b49;
+  --line: #dce3de;
+  --muted: #58635d;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, p, dl, dd { margin: 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.55rem; line-height: 1.25; }
+h3 { font-size: 1.07rem; margin-top: 1.6rem; }
+a { color: var(--green); text-underline-offset: .2em; }
+a:hover { color: #793f4c; }
+:focus-visible { outline: 2px solid #793f4c; outline-offset: 3px; }
+.wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+.top { border-bottom: 1px solid var(--line); background: white; }
+.top nav { min-height: 62px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding-block: 9px; }
+.top a { text-decoration: none; white-space: nowrap; }
+.brand { color: #222a25; font-weight: 750; margin-right: auto; }
+.brand span { font-weight: 450; color: var(--muted); margin-left: .5em; }
+.top [aria-current] { font-weight: 750; text-decoration: underline; }
+.band { border-bottom: 1px solid var(--line); padding-block: 28px; }
+.intro { background: #f0f5f1; }
+.search { display: flex; gap: 10px; align-items: end; margin-top: 12px; max-width: 620px; }
+.search label { flex: 1; min-width: 0; }
+label { display: grid; gap: 5px; font-weight: 600; }
+input, button { font: inherit; min-height: 40px; border-radius: 6px; }
+input { width: 100%; padding: 7px 9px; border: 1px solid #aab8ae; background: white; color: inherit; }
+button { padding: 7px 13px; border: 1px solid var(--green); background: var(--green); color: white; cursor: pointer; font-weight: 650; }
+button:hover { background: #1f4939; }
+.secondary { background: transparent; color: var(--green); }
+.secondary:hover { background: #eaf1ed; }
+.sources { padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 20px 0 0; }
+.sources li { border-top: 1px solid #aab8ae; padding: 10px 0 0; display: grid; gap: 3px; align-content: start; }
+.sources strong { overflow-wrap: anywhere; }
+.sources span, .meta, .muted, footer { font-size: .9rem; color: var(--muted); }
+.sources a + a { margin-left: 10px; }
+.muted { margin-top: 8px; }
+.section-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px; }
+.meta { margin-bottom: 5px; }
+.specs { display: flex; flex-wrap: wrap; gap: 4px 12px; list-style: none; padding: 0; margin: 0; color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 18px 0; border-block: 1px solid var(--line); }
+.stats div { padding: 11px 8px 11px 0; }
+.stats dt { color: var(--muted); font-size: .88rem; }
+.stats dd { color: var(--green); font-size: 1.35rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+.notice { padding: 10px 14px; background: #f5eff1; border-left: 3px solid #793f4c; }
+.history { margin-top: 8px; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-size: .88rem; background: #f0f5f1; }
+.older { margin-top: 12px; }
+summary { cursor: pointer; color: var(--green); }
+.evidence div { display: grid; grid-template-columns: minmax(160px, 265px) 1fr; gap: 4px 14px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.evidence dt { font-weight: 650; }
+.calc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.calc-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+output { font-weight: 650; }
+output[data-over="true"] { color: #8c3444; }
+footer { padding-block: 18px; }
+@media (max-width: 700px) {
+  .sources, .stats, .calc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .evidence div { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .wrap { width: calc(100% - 28px); }
+  .top nav { column-gap: 12px; }
+  .brand { flex-basis: 100%; }
+  .search { align-items: stretch; flex-direction: column; }
+}

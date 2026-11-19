@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#285b49">
+  <title>拍前查价 · 威士忌手记</title>
+  <link rel="stylesheet" href="./auction-check.css">
+  <script src="./auction-check.js" defer></script>
+</head>
+<body>
+  <header class="top"><nav class="wrap" aria-label="主导航"><a class="brand" href="./">HAOLIANG <span>威士忌手记</span></a><a href="./">酒款档案</a><a href="./auction-check.html" aria-current="page">拍前查价</a></nav></header>
+  <main>
+    <section class="band intro">
+      <div class="wrap">
+        <h1>拍前查价</h1>
+        <form id="search-form" class="search">
+          <label>酒款 / 酒厂 / 桶号<input type="search" name="query" maxlength="180" value="Caol Ila 305646" required></label>
+          <button type="submit">生成检索链接</button>
+        </form>
+        <ul class="sources" aria-label="拍卖源">
+          <li><strong>WhiskyAuction.com</strong><span>德国 · EUR</span><div><a href="https://whiskyauction.com/wac/whiskyBrowser" target="_blank" rel="noopener">历史库</a><a data-source="whiskyauction.com" href="https://www.google.com/search?q=site%3Awhiskyauction.com+Caol+Ila+305646" target="_blank" rel="noopener">站内索引 ↗</a></div></li>
+          <li><strong>Whisky Auctioneer</strong><span>英国 / 欧盟 · 以拍品为准</span><div><a href="https://whiskyauctioneer.com/search/past-auctions?keyword=Caol%20Ila%20305646&amp;lots_bottle=All" data-wa target="_blank" rel="noopener">往期拍卖</a><a data-source="whiskyauctioneer.com" href="https://www.google.com/search?q=site%3Awhiskyauctioneer.com+Caol+Ila+305646" target="_blank" rel="noopener">站内索引 ↗</a></div></li>
+          <li><strong>Whisky Hammer</strong><span>英国 / 欧盟 · 以拍品为准</span><div><a href="https://www.whiskyhammer.com/previous-auctions" target="_blank" rel="noopener">往期拍卖</a><a data-source="whiskyhammer.com" href="https://www.google.com/search?q=site%3Awhiskyhammer.com+Caol+Ila+305646" target="_blank" rel="noopener">站内索引 ↗</a></div></li>
+          <li><strong>Scotch Whisky Auctions</strong><span>英国 · GBP</span><div><a href="https://www.scotchwhiskyauctions.com/auctions/" target="_blank" rel="noopener">往期拍卖</a><a data-source="scotchwhiskyauctions.com" href="https://www.google.com/search?q=site%3Ascotchwhiskyauctions.com+Caol+Ila+305646" target="_blank" rel="noopener">站内索引 ↗</a></div></li>
+        </ul>
+        <p id="search-status" class="muted" role="status">检索词：Caol Ila 305646。站内索引不代表完整成交记录。</p>
+      </div>
+    </section>
+    <section class="band" id="caol-ila">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="meta">拍前报告 · <time datetime="2026-11-19">2026 年 11 月 19 日</time></p><h2>Caol Ila Fèis Ìle 2010</h2></div>
+          <ul class="specs"><li>1999 蒸馏</li><li>桶号 #305646</li><li>61.9%</li><li>70cl</li></ul>
+        </div>
+        <dl class="stats" aria-label="德国站同版本 2026 年成交统计">
+          <div><dt>最近落槌 · 11 月</dt><dd>€251</dd></div>
+          <div><dt>2026 年德国站中位数</dt><dd id="median">€251</dd></div>
+          <div><dt>2026 年德国站范围</dt><dd id="range">€241–301</dd></div>
+          <div><dt>同版本成交样本</dt><dd id="sample">5 笔</dd></div>
+        </dl>
+        <p class="notice"><strong>判断：</strong>€251 是这版近期海外落槌的参考，不是中国到手价。以德国站买家费 10% 和 11 月 18 日 ECB 汇率 7.3126 折算，约 <strong>¥2,019</strong>，未含物流、支付费及进口相关费用。官方中国大陆直寄发票上限为 €130，这一价格超限；未确认合规交付渠道前，不把德国落槌当作可执行的购买报价。<br><a href="https://whiskyauction.com/bidder/guide">买家费</a> · <a href="https://whiskyauction.com/bidder/shipping">寄送条款</a> · <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-cny.en.html">ECB 汇率</a></p>
+        <h3>德国站成交</h3>
+        <p class="muted"><a href="https://www.whiskyauction.com/history/bottle/4840354">官方同版本历史</a>：UK Tax Stamp，2014 年以来 28 笔。下表的近期统计只使用 2026 年的 5 笔，不包含往年、高价零售或在拍记录。国内拍品的液面、封口和标签品相尚未核对。</p>
+        <div class="history"><table><thead><tr><th scope="col">场次</th><th scope="col">落槌价</th><th scope="col">原拍品</th></tr></thead><tbody id="recent-lots"></tbody></table></div>
+        <details class="older"><summary>更早成交（23 笔）</summary><div class="history"><table><thead><tr><th scope="col">场次</th><th scope="col">落槌价</th><th scope="col">原拍品</th></tr></thead><tbody id="older-lots"></tbody></table></div></details>
+        <h3>其他来源与待确认</h3>
+        <dl class="evidence">
+          <div><dt>WhiskyAuction.com · 下一场</dt><dd><a href="https://wac2.whiskyauction.com/item/4930996">12 月 12 日同款 #4930996</a>；截至查价日仍未结束，不计入成交。</dd></div>
+          <div><dt>Whisky Auctioneer · 价格未读</dt><dd><a href="https://whiskyauctioneer.com/whisky-lot/8209482/caol-ila-1999-single-cask-bottling">2026 年 7 月 6 日结束，同桶号与规格</a>；须登录查看落槌价。<a href="https://whiskyauctioneer.com/learn/explore-whisky/bottles/caol-ila-feis-ile-2010">酒款介绍</a>不作为价格证据。</dd></div>
+          <div><dt>Whisky Hammer · 历史出价</dt><dd><a href="https://www.whiskyhammer.com/item/4101/Caol-Ila/Caol-Ila---Feis-Ile-2010.html">2017 年 5 月 £160</a>、<a href="https://www.whiskyhammer.com/item/22712/Caol-Ila/Caol-Ila---Feis-Ile-2010.html">2019 年 2 月 £250</a>。公开页面显示的是竞价记录，不将其混入近期落槌统计。</dd></div>
+          <div><dt>Scotch Whisky Auctions · 待核实</dt><dd><a href="https://whiskyhunter.net/base/caol-ila-1999-cask-no-305646-feis-ile-2010-700-ml-619">第三方索引</a>有同名历史记录，本次未核实到官方拍品与价格，不纳入统计。</dd></div>
+          <div><dt>补充 · Whisky.Auction</dt><dd><a href="https://whisky.auction/auctions/lot/11928/caol-ila-1999-single-cask">同桶号 2016 年 £130</a>已售；仅作旧市场参考。此站与德国 WhiskyAuction.com 不同。</dd></div>
+        </dl>
+      </div>
+    </section>
+    <section class="band" id="calculator">
+      <div class="wrap">
+        <h2>国内出价上限</h2>
+        <form id="limit-form">
+          <div class="calc-grid">
+            <label>个人到手预算（¥）<input name="budget" type="number" min="0.01" max="100000000" step="0.01" required inputmode="decimal"></label>
+            <label>国内买家佣金（%）<input name="fee" type="number" min="0" max="100" step="0.01" required inputmode="decimal"></label>
+            <label>其他费用合计（¥）<input name="extras" type="number" min="0" max="100000000" step="0.01" required inputmode="decimal"></label>
+            <label>下一口出价（¥，选填）<input name="bid" type="number" min="0" max="100000000" step="0.01" inputmode="decimal"></label>
+          </div>
+          <div class="calc-actions"><button type="submit">计算上限</button><button class="secondary" type="reset">清空</button><output id="limit-result" aria-live="polite">尚未计算</output></div>
+        </form>
+        <p class="muted">佣金按落槌价线性计费。分档佣金、最低佣金和税费请以国内平台账单为准；没有其他费用时填 0，出价上限再按平台加价档向下取整。</p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">Haoliang · 威士忌手记</footer>
+</body>
+</html>

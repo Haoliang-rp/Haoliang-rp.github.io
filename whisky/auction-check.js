@@ -62,9 +62,9 @@ if (typeof document !== "undefined") {
     tr.insertCell().append(link);
   }
 
-  $("search-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const query = event.currentTarget.elements.query.value.trim();
+  const queryField = $("search-form").elements.query;
+  const updateSearchLinks = () => {
+    const query = queryField.value.trim();
     if (!query) {
       $("search-status").textContent = "请输入酒款、酒厂或桶号。";
       return;
@@ -77,7 +77,16 @@ if (typeof document !== "undefined") {
     wa.searchParams.set("lots_bottle", "All");
     document.querySelector("[data-wa]").href = wa.href;
     $("search-status").textContent = "检索词：" + query + "。站内索引不代表完整成交记录。";
+  };
+  $("search-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    updateSearchLinks();
   });
+  const incomingQuery = new URLSearchParams(location.search).get("q")?.trim();
+  if (incomingQuery) {
+    queryField.value = incomingQuery.slice(0, queryField.maxLength);
+    updateSearchLinks();
+  }
 
   const form = $("limit-form");
   const output = $("limit-result");
